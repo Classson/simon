@@ -37,3 +37,54 @@ function playRed(){
     sndRed();
     flashRed();
 }
+
+function playGreen(){
+   let greenSnd = new Audio('http://www.pacdv.com/sounds/domestic_sound_effects/can-to-table-1.wav');
+
+    function sndGreen(){
+        greenSnd.currentTime=0;
+        greenSnd.play();
+    }
+
+    function flashGreen(){
+        document.getElementById('green').style.backgroundColor = "#39d658";
+        setTimeout(function(){ document.getElementById('green').style.backgroundColor = "green"; }, 1000);
+    }
+    
+    sndGreen();
+    flashGreen();
+}
+
+function playYellow(){
+   let yellowSnd = new Audio('http://www.pacdv.com/sounds/interface_sound_effects/sound81.wav');
+
+    function sndYellow(){
+        yellowSnd.currentTime=0;
+        yellowSnd.play();
+    }
+
+    function flashYellow(){
+        document.getElementById('yellow').style.backgroundColor = "#f4ff84";
+        setTimeout(function(){ document.getElementById('yellow').style.backgroundColor = "yellow"; }, 1000);
+    }
+    
+    sndYellow();
+    flashYellow();
+}
+
+function playBlue(){
+   let blueSnd = new Audio('http://www.pacdv.com/sounds/miscellaneous_sounds/striking-a-match-1.wav');
+
+    function sndBlue(){
+        blueSnd.currentTime=0;
+        blueSnd.play();
+    }
+
+    function flashBlue(){
+        document.getElementById('blue').style.backgroundColor = "#83c5ff";
+        setTimeout(function(){ document.getElementById('blue').style.backgroundColor = "blue"; }, 1000);
+    }
+    
+    sndBlue();
+    flashBlue();
+}

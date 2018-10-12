@@ -19,3 +19,6 @@ const randomColor = () => {
 //function that adds new random color to the array
 const addColor = () => gameArr.push(randomColor());
 
+let blueSnd = new Audio('http://www.pacdv.com/sounds/domestic_sound_effects/keys-catch-1.wav');
+snd.currentTime=0;
+blueSnd.play();

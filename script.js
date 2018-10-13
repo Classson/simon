@@ -1,6 +1,6 @@
 let colors = ['red', 'blue', 'green', 'yellow'];
 
-let gameArr = [];
+let gameArr = ['red', 'yellow', 'blue', 'green'];
 
 let userArr = [];
 
@@ -12,7 +12,22 @@ const randomColor = () => {
     }
 
 //function that "plays" the current array
-
+function playArr (){
+    for(let i = 0; i < gameArr.length; i++){
+        if(gameArr[i] === 'red'){
+            setTimeout(function(){ playRed() }, 700);
+        }
+        if(gameArr[i] === 'blue'){
+            setTimeout(function(){ playBlue() }, 700);
+        }
+        if(gameArr[i] === 'green'){
+            setTimeout(function(){ playGreen() }, 700);
+        }
+        if(gameArr[i] === 'yellow'){
+            setTimeout(function(){ playYellow() }, 700);
+        }
+    }
+}
 
 //function that checks user input array against current array
 
@@ -34,7 +49,7 @@ function playRed(){
         setTimeout(function(){ document.getElementById('red').style.backgroundColor = "red"; }, 1000);
     }
     
-    sndRed();
+    //sndRed();
     flashRed();
 }
 
@@ -51,7 +66,7 @@ function playGreen(){
         setTimeout(function(){ document.getElementById('green').style.backgroundColor = "green"; }, 1000);
     }
     
-    sndGreen();
+    //sndGreen();
     flashGreen();
 }
 
@@ -68,7 +83,7 @@ function playYellow(){
         setTimeout(function(){ document.getElementById('yellow').style.backgroundColor = "yellow"; }, 1000);
     }
     
-    sndYellow();
+    //sndYellow();
     flashYellow();
 }
 
@@ -82,9 +97,9 @@ function playBlue(){
 
     function flashBlue(){
         document.getElementById('blue').style.backgroundColor = "#83c5ff";
-        setTimeout(function(){ document.getElementById('blue').style.backgroundColor = "blue"; }, 1000);
+        setTimeout(function(){ document.getElementById('blue').style.backgroundColor = "blue"; }, 700);
     }
     
-    sndBlue();
+    //sndBlue();
     flashBlue();
 }

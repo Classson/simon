@@ -1,6 +1,6 @@
 let colors = ['red', 'blue', 'green', 'yellow'];
 
-let gameArr = ['red', 'yellow', 'blue', 'green'];
+let gameArr = ['green', 'blue', 'blue', 'red'];
 
 let userArr = [];
 
@@ -12,19 +12,23 @@ const randomColor = () => {
     }
 
 //function that "plays" the current array
-function playArr (){
+function playArr(){
     for(let i = 0; i < gameArr.length; i++){
         if(gameArr[i] === 'red'){
-            setTimeout(function(){ playRed() }, 700);
+            setTimeout(function(){ playRed() }, (i*800));
+            resetBoard(i*200);
         }
         if(gameArr[i] === 'blue'){
-            setTimeout(function(){ playBlue() }, 700);
+            setTimeout(function(){ playBlue() }, (i*800));
+            resetBoard(i*200);
         }
         if(gameArr[i] === 'green'){
-            setTimeout(function(){ playGreen() }, 700);
+            setTimeout(function(){ playGreen() }, (i*800));
+            resetBoard(i*200);
         }
         if(gameArr[i] === 'yellow'){
-            setTimeout(function(){ playYellow() }, 700);
+            setTimeout(function(){ playYellow() }, (i*800));
+            resetBoard(i*200);
         }
     }
 }
@@ -45,11 +49,12 @@ function playRed(){
     }
 
     function flashRed(){
-        document.getElementById('red').style.backgroundColor = "#ff4032";
-        setTimeout(function(){ document.getElementById('red').style.backgroundColor = "red"; }, 1000);
+        document.getElementById('red').style.backgroundColor = "black"; 
+        //"#ff4032"
+        setTimeout(function(){ document.getElementById('red').style.backgroundColor = "red"; }, 800);
     }
     
-    //sndRed();
+    sndRed();
     flashRed();
 }
 
@@ -62,11 +67,11 @@ function playGreen(){
     }
 
     function flashGreen(){
-        document.getElementById('green').style.backgroundColor = "#39d658";
-        setTimeout(function(){ document.getElementById('green').style.backgroundColor = "green"; }, 1000);
+        document.getElementById('green').style.backgroundColor = "black"; //"#39d658";
+        setTimeout(function(){ document.getElementById('green').style.backgroundColor = "green"; }, 800);
     }
     
-    //sndGreen();
+    sndGreen();
     flashGreen();
 }
 
@@ -79,11 +84,11 @@ function playYellow(){
     }
 
     function flashYellow(){
-        document.getElementById('yellow').style.backgroundColor = "#f4ff84";
-        setTimeout(function(){ document.getElementById('yellow').style.backgroundColor = "yellow"; }, 1000);
+        document.getElementById('yellow').style.backgroundColor = "black"; //"#f4ff84";
+        setTimeout(function(){ document.getElementById('yellow').style.backgroundColor = "yellow"; }, 800);
     }
     
-    //sndYellow();
+    sndYellow();
     flashYellow();
 }
 
@@ -96,10 +101,21 @@ function playBlue(){
     }
 
     function flashBlue(){
-        document.getElementById('blue').style.backgroundColor = "#83c5ff";
-        setTimeout(function(){ document.getElementById('blue').style.backgroundColor = "blue"; }, 700);
+        document.getElementById('blue').style.backgroundColor = "black"; //"#83c5ff";
+        setTimeout(function(){ document.getElementById('blue').style.backgroundColor = "blue"; }, 800);
     }
     
-    //sndBlue();
+    sndBlue();
     flashBlue();
+}
+
+
+function resetBoard(timeout) {
+    setTimeout(function(){
+        console.log("running");
+    document.getElementById('blue').style.backgroundColor = "blue";
+    document.getElementById('yellow').style.backgroundColor = "yellow";
+    document.getElementById('green').style.backgroundColor = "green";
+    document.getElementById('red').style.backgroundColor = "red";
+    }, timeout);
 }

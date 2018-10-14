@@ -13,36 +13,45 @@ const randomColor = () => {
 const startGame = () => {
     gameArr = [];
     addColor();
-    playArr();
+    play();
 }
 
 //function that "plays" the current array
 function playColor(color){
         if(color === 'red'){
             setTimeout(function(){ playRed() }, 800);
-            resetBoard(200);
+            resetBoard(100);
         }
         if(color === 'blue'){
             setTimeout(function(){ playBlue() }, 800);
-            resetBoard(200);
+            resetBoard(100);
         }
         if(color === 'green'){
             setTimeout(function(){ playGreen() }, 800);
-            resetBoard(200);
+            resetBoard(100);
         }
         if(color === 'yellow'){
             setTimeout(function(){ playYellow() }, 800);
-            resetBoard(200);
+            resetBoard(100);
         }
 }
 
-function playArr(){
-    for(let i = 0; i < gameArr.length; i++){
-        //setInterval(function(){ playColor(gameArr[i]); }, 900);
-    }
+// plays each element in order
+function play() {
+    var i = 0;
+    var interval = setInterval(function() {
+        console.log(gameArr);
+        playColor(gameArr[i]);
+
+        i++;
+        console.log(i);
+        if (i >= gameArr.length) {
+            console.log("running");
+            clearInterval(interval);
+        }
+   }, 800);
 }
 
-//
 
 
 //function that checks user input array against current array
@@ -124,7 +133,6 @@ function playBlue(){
 
 function resetBoard(timeout) {
     setTimeout(function(){
-        console.log("running");
     document.getElementById('blue').style.backgroundColor = "blue";
     document.getElementById('yellow').style.backgroundColor = "yellow";
     document.getElementById('green').style.backgroundColor = "green";

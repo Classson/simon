@@ -7,9 +7,14 @@ let userArr = [];
 //function to generate random color
 const randomColor = () => {
         let ind = Math.floor(Math.random() * 4);
-    
         return colors[ind];
     }
+
+const startGame = () => {
+    gameArr = [];
+    addColor();
+    playArr();
+}
 
 //function that "plays" the current array
 function playArr(){

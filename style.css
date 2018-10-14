@@ -9,6 +9,14 @@ button {
     height: 35vw;
 }
 
+#start {
+    width: 30vw;
+    height: 10vw;
+    background-color: palevioletred;
+    color: white;
+    margin: 20px;
+}
+
 #red {
     background-color: red;
 }

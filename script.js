@@ -17,26 +17,33 @@ const startGame = () => {
 }
 
 //function that "plays" the current array
+function playColor(color){
+        if(color === 'red'){
+            setTimeout(function(){ playRed() }, 800);
+            resetBoard(200);
+        }
+        if(color === 'blue'){
+            setTimeout(function(){ playBlue() }, 800);
+            resetBoard(200);
+        }
+        if(color === 'green'){
+            setTimeout(function(){ playGreen() }, 800);
+            resetBoard(200);
+        }
+        if(color === 'yellow'){
+            setTimeout(function(){ playYellow() }, 800);
+            resetBoard(200);
+        }
+}
+
 function playArr(){
     for(let i = 0; i < gameArr.length; i++){
-        if(gameArr[i] === 'red'){
-            setTimeout(function(){ playRed() }, (i*800));
-            resetBoard(i*200);
-        }
-        if(gameArr[i] === 'blue'){
-            setTimeout(function(){ playBlue() }, (i*800));
-            resetBoard(i*200);
-        }
-        if(gameArr[i] === 'green'){
-            setTimeout(function(){ playGreen() }, (i*800));
-            resetBoard(i*200);
-        }
-        if(gameArr[i] === 'yellow'){
-            setTimeout(function(){ playYellow() }, (i*800));
-            resetBoard(i*200);
-        }
+        //setInterval(function(){ playColor(gameArr[i]); }, 900);
     }
 }
+
+//
+
 
 //function that checks user input array against current array
 

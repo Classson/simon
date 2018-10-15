@@ -4,7 +4,10 @@ let gameArr = [];
 
 let userArr = [];
 
-
+const addRed = () => gameArr.push("red");
+const addBlue = () => gameArr.push("blue");
+const addGreen = () => gameArr.push("green");
+const addYellow = () => gameArr.push("yellow");
 
 //function to generate random color
 const randomColor = () => {
@@ -115,6 +118,7 @@ function playYellow(){
 
 function playBlue(){
    let blueSnd = new Audio('http://www.pacdv.com/sounds/miscellaneous_sounds/striking-a-match-1.wav');
+    console.log(gameArr);
 
     function sndBlue(){
         blueSnd.currentTime=0;

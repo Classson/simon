@@ -4,10 +4,27 @@ let gameArr = [];
 
 let userArr = [];
 
-const addRed = () => gameArr.push("red");
-const addBlue = () => gameArr.push("blue");
-const addGreen = () => gameArr.push("green");
-const addYellow = () => gameArr.push("yellow");
+const addRed = () => userArr.push("red");
+const addBlue = () => userArr.push("blue");
+const addGreen = () => userArr.push("green");
+const addYellow = () => userArr.push("yellow");
+
+const checkArrs = () => {
+    if(userArr.length === gameArr.length){
+        console.log("gameArr is " + gameArr);
+        console.log("userArr is " + userArr);
+        for(let i = 0; i < gameArr.length; i++){
+            if(gameArr[i] !== userArr[i]){
+                console.log("nope!");
+                return "no dice";
+            }
+        }
+        console.log("all good");
+        addColor();
+        play();
+        userArr = [];
+    }
+}
 
 //function to generate random color
 const randomColor = () => {

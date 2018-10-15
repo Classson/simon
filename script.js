@@ -1,8 +1,10 @@
 let colors = ['red', 'blue', 'green', 'yellow'];
 
-let gameArr = ['green', 'blue', 'blue', 'red'];
+let gameArr = [];
 
 let userArr = [];
+
+
 
 //function to generate random color
 const randomColor = () => {
@@ -10,6 +12,7 @@ const randomColor = () => {
         return colors[ind];
     }
 
+//clears gameArr, adds first color and plays the result
 const startGame = () => {
     gameArr = [];
     addColor();
@@ -38,15 +41,11 @@ function playColor(color){
 
 // plays each element in order
 function play() {
-    var i = 0;
-    var interval = setInterval(function() {
-        console.log(gameArr);
+    let i = 0;
+    let interval = setInterval(function() {
         playColor(gameArr[i]);
-
         i++;
-        console.log(i);
         if (i >= gameArr.length) {
-            console.log("running");
             clearInterval(interval);
         }
    }, 800);
@@ -56,11 +55,12 @@ function play() {
 
 //function that checks user input array against current array
 
+
 //function that adds new random color to the array
 const addColor = () => gameArr.push(randomColor());
 
 
-
+//functions that play each color
 function playRed(){
    let redSnd = new Audio('http://www.pacdv.com/sounds/domestic_sound_effects/keys-catch-1.wav');
 
@@ -131,6 +131,8 @@ function playBlue(){
 }
 
 
+
+// resets board between plays
 function resetBoard(timeout) {
     setTimeout(function(){
     document.getElementById('blue').style.backgroundColor = "blue";

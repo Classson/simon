@@ -10,6 +10,7 @@ const addGreen = () => userArr.push("green");
 const addYellow = () => userArr.push("yellow");
 
 const checkArrs = () => {
+    console.log("checing");
     if(userArr.length === gameArr.length){
         console.log("gameArr is " + gameArr);
         console.log("userArr is " + userArr);

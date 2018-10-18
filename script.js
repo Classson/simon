@@ -10,10 +10,7 @@ const addGreen = () => userArr.push("green");
 const addYellow = () => userArr.push("yellow");
 
 const checkArrs = () => {
-    console.log("checing");
     if(userArr.length === gameArr.length){
-        console.log("gameArr is " + gameArr);
-        console.log("userArr is " + userArr);
         for(let i = 0; i < gameArr.length; i++){
             if(gameArr[i] !== userArr[i]){
                 console.log("nope!");
@@ -40,6 +37,7 @@ const startGame = () => {
     gameArr = [];
     addColor();
     play();
+ document.getElementById('game').style.backgroundColor = "#e5e5e5"; 
 }
 
 //function that "plays" the current array

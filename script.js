@@ -17,10 +17,12 @@ const checkArrs = () => {
         for(let i = 0; i < gameArr.length; i++){
             if(gameArr[i] !== userArr[i]){
                 console.log("nope!");
+                document.getElementById('game').style.backgroundColor = "#ff3f2d";
                 return "no dice";
             }
         }
         console.log("all good");
+        document.getElementById('game').style.backgroundColor = "#59c600"; 
         addColor();
         play();
         userArr = [];

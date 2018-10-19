@@ -91,10 +91,14 @@ function playRed(){
         redSnd.play();
     }
 
+    document.getElementById('red').style.transform = "scale(1.1, 1.1)";
+
+    
     function flashRed(){
         document.getElementById('red').style.backgroundColor = "black"; 
         //"#ff4032"
         setTimeout(function(){ document.getElementById('red').style.backgroundColor = "red"; }, 800);
+        setTimeout(function(){ document.getElementById('red').style.transform = "scale(1, 1)"; }, 800);
     }
     
     sndRed();
@@ -129,9 +133,12 @@ function playYellow(){
         yellowSnd.play();
     }
 
+    document.getElementById('yellow').style.transform = "scale(1.1, 1.1)";
+    
     function flashYellow(){
         document.getElementById('yellow').style.backgroundColor = "black"; //"#f4ff84";
         setTimeout(function(){ document.getElementById('yellow').style.backgroundColor = "yellow"; }, 800);
+        setTimeout(function(){ document.getElementById('yellow').style.transform = "scale(1, 1)"; }, 800);
     }
     
     sndYellow();
@@ -146,10 +153,13 @@ function playBlue(){
         blueSnd.currentTime=0;
         blueSnd.play();
     }
+    
+    document.getElementById('blue').style.transform = "scale(1.1, 1.1)";
 
     function flashBlue(){
         document.getElementById('blue').style.backgroundColor = "black"; //"#83c5ff";
         setTimeout(function(){ document.getElementById('blue').style.backgroundColor = "blue"; }, 800);
+        setTimeout(function(){ document.getElementById('blue').style.transform = "scale(1, 1)"; }, 800);
     }
     
     sndBlue();

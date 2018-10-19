@@ -10,11 +10,6 @@ const addGreen = () => userArr.push("green");
 const addYellow = () => userArr.push("yellow");
 
 const checkArrs = () => {
-     if(gameArr[i] !== userArr[i]){
-                console.log("nope!");
-                document.getElementById('game').style.backgroundColor = "#ff3f2d";
-                return "no dice";
-            }
     if(userArr.length === gameArr.length){
         for(let i = 0; i < gameArr.length; i++){
             if(gameArr[i] !== userArr[i]){
@@ -114,9 +109,12 @@ function playGreen(){
         greenSnd.play();
     }
 
+    document.getElementById('green').style.transform = "scale(1.1, 1.1)";
+    
     function flashGreen(){
         document.getElementById('green').style.backgroundColor = "black"; //"#39d658";
         setTimeout(function(){ document.getElementById('green').style.backgroundColor = "green"; }, 800);
+        setTimeout(function(){ document.getElementById('green').style.transform = "scale(1, 1)"; }, 800);
     }
     
     sndGreen();

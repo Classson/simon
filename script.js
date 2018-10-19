@@ -10,6 +10,11 @@ const addGreen = () => userArr.push("green");
 const addYellow = () => userArr.push("yellow");
 
 const checkArrs = () => {
+     if(gameArr[i] !== userArr[i]){
+                console.log("nope!");
+                document.getElementById('game').style.backgroundColor = "#ff3f2d";
+                return "no dice";
+            }
     if(userArr.length === gameArr.length){
         for(let i = 0; i < gameArr.length; i++){
             if(gameArr[i] !== userArr[i]){
@@ -34,6 +39,7 @@ const randomColor = () => {
 
 //clears gameArr, adds first color and plays the result
 const startGame = () => {
+    console.log("running");
     gameArr = [];
     addColor();
     play();

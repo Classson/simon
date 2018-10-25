@@ -44,19 +44,19 @@ const startGame = () => {
 //function that "plays" the current array
 function playColor(color){
         if(color === 'red'){
-            setTimeout(function(){ playRed() }, 800);
+            setTimeout(function(){ playRed.playFunc() }, 800);
             //resetBoard(100);
         }
         if(color === 'blue'){
-            setTimeout(function(){ playBlue() }, 800);
+            setTimeout(function(){ playBlue.playFunc() }, 800);
             //resetBoard(100);
         }
         if(color === 'green'){
-            setTimeout(function(){ playGreen() }, 800);
+            setTimeout(function(){ playGreen.playFunc() }, 800);
             //resetBoard(100);
         }
         if(color === 'yellow'){
-            setTimeout(function(){ playYellow() }, 800);
+            setTimeout(function(){ playYellow.playFunc() }, 800);
             //resetBoard(100);
         }
 }
@@ -78,103 +78,27 @@ function play() {
 const addColor = () => gameArr.push(randomColor());
 
 //player constructor
-
-const Player(color, sound) {
-    this.color: color,
-    this.playFunc: (){
+function Player(color, sound) {
+    this.color = color,
+    this.playFunc = function(){
+        console.log("running");
         let snd = new Audio(sound);
+        console.log(snd);
         snd.currentTime=0;
-        snd.play;
+        snd.play();
         document.getElementById(color).style.backgroundColor = "black";
-        setTimeout(function(){ document.getElementById('red').style.backgroundColor = "red"; }, 800);
+        setTimeout(function(){ document.getElementById(color).style.backgroundColor = color; }, 800);
     }
 }
 
+//make play objects for each color with play functions
+let playRed = new Player('red', 'http://www.pacdv.com/sounds/domestic_sound_effects/keys-catch-1.wav');
 
-//functions that play each color
-function playRed(){
-   let redSnd = new Audio('http://www.pacdv.com/sounds/domestic_sound_effects/keys-catch-1.wav');
+let playBlue = new Player('blue', 'http://www.pacdv.com/sounds/miscellaneous_sounds/striking-a-match-1.wav');
 
-    function sndRed(){
-        redSnd.currentTime=0;
-        redSnd.play();
-    }
+let playGreen = new Player('green', 'http://www.pacdv.com/sounds/domestic_sound_effects/can-to-table-1.wav');
 
-    document.getElementById('red').style.transform = "scale(1.1, 1.1)";
-
-    
-    function flashRed(){
-        document.getElementById('red').style.backgroundColor = "black"; 
-        //"#ff4032"
-        setTimeout(function(){ document.getElementById('red').style.backgroundColor = "red"; }, 800);
-        setTimeout(function(){ document.getElementById('red').style.transform = "scale(1, 1)"; }, 800);
-    }
-    
-    sndRed();
-    flashRed();
-}
-
-function playGreen(){
-   let greenSnd = new Audio('http://www.pacdv.com/sounds/domestic_sound_effects/can-to-table-1.wav');
-
-    function sndGreen(){
-        greenSnd.currentTime=0;
-        greenSnd.play();
-    }
-
-    document.getElementById('green').style.transform = "scale(1.1, 1.1)";
-    
-    function flashGreen(){
-        document.getElementById('green').style.backgroundColor = "black"; //"#39d658";
-        setTimeout(function(){ document.getElementById('green').style.backgroundColor = "green"; }, 800);
-        setTimeout(function(){ document.getElementById('green').style.transform = "scale(1, 1)"; }, 800);
-    }
-    
-    sndGreen();
-    flashGreen();
-}
-
-function playYellow(){
-   let yellowSnd = new Audio('http://www.pacdv.com/sounds/interface_sound_effects/sound81.wav');
-
-    function sndYellow(){
-        yellowSnd.currentTime=0;
-        yellowSnd.play();
-    }
-
-    document.getElementById('yellow').style.transform = "scale(1.1, 1.1)";
-    
-    function flashYellow(){
-        document.getElementById('yellow').style.backgroundColor = "black"; //"#f4ff84";
-        setTimeout(function(){ document.getElementById('yellow').style.backgroundColor = "yellow"; }, 800);
-        setTimeout(function(){ document.getElementById('yellow').style.transform = "scale(1, 1)"; }, 800);
-    }
-    
-    sndYellow();
-    flashYellow();
-}
-
-function playBlue(){
-   let blueSnd = new Audio('http://www.pacdv.com/sounds/miscellaneous_sounds/striking-a-match-1.wav');
-    console.log(gameArr);
-
-    function sndBlue(){
-        blueSnd.currentTime=0;
-        blueSnd.play();
-    }
-    
-    document.getElementById('blue').style.transform = "scale(1.1, 1.1)";
-
-    function flashBlue(){
-        document.getElementById('blue').style.backgroundColor = "black"; //"#83c5ff";
-        setTimeout(function(){ document.getElementById('blue').style.backgroundColor = "blue"; }, 800);
-        setTimeout(function(){ document.getElementById('blue').style.transform = "scale(1, 1)"; }, 800);
-    }
-    
-    sndBlue();
-    flashBlue();
-}
-
+let playYellow = new Player('yellow','http://www.pacdv.com/sounds/interface_sound_effects/sound81.wav');
 
 
 // resets board between plays

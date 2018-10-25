@@ -74,12 +74,21 @@ function play() {
 }
 
 
-
-//function that checks user input array against current array
-
-
 //function that adds new random color to the array
 const addColor = () => gameArr.push(randomColor());
+
+//player constructor
+
+const Player(color, sound) {
+    this.color: color,
+    this.playFunc: (){
+        let snd = new Audio(sound);
+        snd.currentTime=0;
+        snd.play;
+        document.getElementById(color).style.backgroundColor = "black";
+        setTimeout(function(){ document.getElementById('red').style.backgroundColor = "red"; }, 800);
+    }
+}
 
 
 //functions that play each color

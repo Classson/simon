@@ -45,19 +45,15 @@ const startGame = () => {
 function playColor(color){
         if(color === 'red'){
             setTimeout(function(){ playRed.playFunc() }, 800);
-            //resetBoard(100);
         }
         if(color === 'blue'){
             setTimeout(function(){ playBlue.playFunc() }, 800);
-            //resetBoard(100);
         }
         if(color === 'green'){
             setTimeout(function(){ playGreen.playFunc() }, 800);
-            //resetBoard(100);
         }
         if(color === 'yellow'){
             setTimeout(function(){ playYellow.playFunc() }, 800);
-            //resetBoard(100);
         }
 }
 

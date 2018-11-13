@@ -44,16 +44,16 @@ const startGame = () => {
 //function that "plays" the current array
 function playColor(color){
         if(color === 'red'){
-            setTimeout(function(){ playRed.playFunc() }, 800);
+            setTimeout(function(){ playRed.playFunc() }, 500);
         }
         if(color === 'blue'){
-            setTimeout(function(){ playBlue.playFunc() }, 800);
+            setTimeout(function(){ playBlue.playFunc() }, 500);
         }
         if(color === 'green'){
-            setTimeout(function(){ playGreen.playFunc() }, 800);
+            setTimeout(function(){ playGreen.playFunc() }, 500);
         }
         if(color === 'yellow'){
-            setTimeout(function(){ playYellow.playFunc() }, 800);
+            setTimeout(function(){ playYellow.playFunc() }, 500);
         }
 }
 
@@ -66,7 +66,7 @@ function play() {
         if (i >= gameArr.length) {
             clearInterval(interval);
         }
-   }, 800);
+   }, 500);
 }
 
 

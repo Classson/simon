@@ -97,12 +97,3 @@ let playGreen = new Player('green', 'https://s3.amazonaws.com/freecodecamp/simon
 let playYellow = new Player('yellow','https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
 
-// resets board between plays
-function resetBoard(timeout) {
-    setTimeout(function(){
-    document.getElementById('blue').style.backgroundColor = "blue";
-    document.getElementById('yellow').style.backgroundColor = "yellow";
-    document.getElementById('green').style.backgroundColor = "green";
-    document.getElementById('red').style.backgroundColor = "red";
-    }, timeout);
-}

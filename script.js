@@ -92,13 +92,13 @@ function Player(color, sound) {
 }
 
 //make play objects for each color with play functions
-let playRed = new Player('red', 'http://www.pacdv.com/sounds/domestic_sound_effects/keys-catch-1.wav');
+let playRed = new Player('red', 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 
-let playBlue = new Player('blue', 'http://www.pacdv.com/sounds/miscellaneous_sounds/striking-a-match-1.wav');
+let playBlue = new Player('blue', 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
 
-let playGreen = new Player('green', 'http://www.pacdv.com/sounds/domestic_sound_effects/can-to-table-1.wav');
+let playGreen = new Player('green', 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 
-let playYellow = new Player('yellow','http://www.pacdv.com/sounds/interface_sound_effects/sound81.wav');
+let playYellow = new Player('yellow','https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
 
 // resets board between plays
